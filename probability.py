@@ -1,5 +1,5 @@
 import math
-import cards as deck
+import deck
 
 def create_hand():
     combo = []
