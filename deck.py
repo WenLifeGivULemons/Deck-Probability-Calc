@@ -24,4 +24,9 @@ class Deck:
             pass
         pass
 
-
+    def print_deck(self):
+        i = 0
+        while i < self.size:
+            print(str(i + 1) + ": " + self.cardlist[i].name)
+            i += 1
+        pass
