@@ -1,17 +1,11 @@
-class deck():
-    def __init__(self):
-        pass
+class Deck:
+    def __init__(self, decksize):
+        self.size = decksize
 
-class card():
-    def __init__(self):
-        pass
+        # create the cards in the deck
 
 
-class group():
-    def __init__(self):
-        pass
 
-
-class combo():
+class Card:
     def __init__(self):
         pass

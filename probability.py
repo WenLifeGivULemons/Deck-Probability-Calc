@@ -1,5 +1,5 @@
 import math
-
+import cards as deck
 
 def create_hand():
     combo = []
@@ -38,12 +38,11 @@ def prob_of_combo(decksize, combo, handsize):
 def run_prob():
     handgoingfirst = 5
     handgoingsecond = 6
-    decksize = input("what is the size of your deck? ")
 
     hand1 = create_hand()
 
-    prob1first = prob_of_combo(int(decksize), hand1, handgoingfirst)
-    prob1second = prob_of_combo(int(decksize), hand1, handgoingsecond)
+    prob1first = prob_of_combo(int(deck.size), hand1, handgoingfirst)
+    prob1second = prob_of_combo(int(deck.size), hand1, handgoingsecond)
 
     print("Going first: %.2f Going second: %.2f" % (prob1first, prob1second))
     pass
