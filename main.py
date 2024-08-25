@@ -1,5 +1,6 @@
 import probability as prob
+import cards
 
 if __name__ == '__main__':
-    prob.build_deck()
+    deck = cards.deck()
     prob.run_prob()
