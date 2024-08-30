@@ -30,7 +30,6 @@ class Deck:
 
     def create_group(self):
         group = []
-        # TODO: complete
         done = False
         while done is False:
             self.print_deck()
