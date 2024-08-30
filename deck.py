@@ -11,29 +11,36 @@ class Deck:
             cardname = input("What is the card name? ")
             cardamount = int(input("How many copies are there? "))
 
-            if cardamount == 2:
-                self.cardlist.append(card.Card(cardname))
-                i += 1
-            elif cardamount == 3:
-                self.cardlist.append(card.Card(cardname))
-                self.cardlist.append(card.Card(cardname))
+            self.cardlist.append(card.Card(cardname, cardamount))
+            if cardamount == 3:
+                i += 3
+            elif cardamount == 2:
                 i += 2
+            else:
+                i += 1
                 pass
-            self.cardlist.append(card.Card(cardname))
-            i += 1
             pass
         pass
 
     def print_deck(self):
-        i = 0
-        while i < self.size:
-            print(str(i + 1) + ": " + self.cardlist[i].name)
-            i += 1
+        for i in range(self.size):
+            print(str(i + 1) + ": " + self.cardlist[i].name + ", amt: " + str(self.cardlist[i].amount))
+            pass
         pass
 
     def create_group(self):
         group = []
         # TODO: complete
+        done = False
+        while done is False:
+            self.print_deck()
+            ans = input("\nGive the number of the card you want to add to the list, or print 'done': ")
+            if ans is 'done':
+                done = True
+            else:
+                group.append(self.decklist[int(ans)-1])
+                pass
+            pass
         self.grouplist.append(group)
         pass
 
