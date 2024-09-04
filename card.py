@@ -4,3 +4,10 @@ class Card:
         self.amount = cardamount
         pass
 
+
+    def getname(self):
+        return self.name
+
+
+    def getamount(self):
+        return self.amount

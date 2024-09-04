@@ -24,9 +24,10 @@ class Deck:
 
     def print_deck(self):
         for i in range(self.size):
-            print(str(i + 1) + ": " + self.cardlist[i].name + ", amt: " + str(self.cardlist[i].amount))
+            print(str(i + 1) + ": " + self.cardlist[i].getname() + ", amt: " + str(self.cardlist[i].getamount()))
             pass
         pass
+
 
     def create_group(self):
         group = []
@@ -46,7 +47,11 @@ class Deck:
 
     def list_groups(self):
         for i in range(len(self.grouplist)):
-            # TODO: test after completing above function
-            print(self.grouplist[i])
+            print("Group " + str(i+1))
+            list = ""
+            for j in range(len(self.grouplist[i])):
+                list = list + self.grouplist[i][j]
+                pass
+            print(list)
             pass
         pass
