@@ -1,6 +1,7 @@
 import math
 import deck
 
+# unused. to be removed
 def create_hand():
     combo = []
     comboname = []
@@ -39,12 +40,17 @@ def run_prob():
     handgoingfirst = 5
     handgoingsecond = 6
 
-    hand1 = create_hand()
+    # 2D array
+    hand = deck.getgrouplist()
 
-    prob1first = prob_of_combo(int(deck.size), hand1, handgoingfirst)
-    prob1second = prob_of_combo(int(deck.size), hand1, handgoingsecond)
+    probfirst = []
+    probsecond = []
+    # 2D arrays need to fix
+    for i in range(0, hand.size):
+        probfirst[i] = prob_of_combo(int(deck.size), hand[i], handgoingfirst)
+        probsecond = prob_of_combo(int(deck.size), hand[i], handgoingsecond)
 
-    print("Going first: %.2f Going second: %.2f" % (prob1first, prob1second))
+    print("Going first: %.2f Going second: %.2f" % (probfirst, probsecond))
     pass
 
 

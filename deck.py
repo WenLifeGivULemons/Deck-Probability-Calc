@@ -12,15 +12,18 @@ class Deck:
             cardamount = int(input("How many copies are there? "))
 
             self.cardlist.append(card.Card(cardname, cardamount))
-            if cardamount == 3:
-                i += 3
-            elif cardamount == 2:
-                i += 2
-            else:
-                i += 1
-                pass
+            i += cardamount
             pass
         pass
+
+
+    def getgrouplist(self):
+        return self.grouplist
+    
+
+    def getdecklist(self):
+        return self.cardlist
+
 
     def print_deck(self):
         for i in range(self.size):
@@ -28,7 +31,7 @@ class Deck:
             pass
         pass
 
-
+    # unused
     def create_group(self):
         group = []
         done = False
@@ -44,7 +47,7 @@ class Deck:
         self.grouplist.append(group)
         pass
 
-
+    # unused
     def list_groups(self):
         for i in range(len(self.grouplist)):
             print("Group " + str(i+1))
