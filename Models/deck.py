@@ -38,7 +38,7 @@ class Deck:
         while done is False:
             self.print_deck()
             ans = input("\nGive the number of the card you want to add to the list, or print 'done': ")
-            if ans is 'done':
+            if ans == 'done':
                 done = True
             else:
                 group.append(self.decklist[int(ans)-1])

@@ -1,5 +1,4 @@
-import probability as prob
-import deck
+from Models import probability as prob, deck
 
 if __name__ == '__main__':
     decksize = input("How many cards are in your deck? ")
