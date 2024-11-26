@@ -5,16 +5,16 @@ from Models import deck
 # unused. to be removed
 def create_hand():
     combo = []
-    comboname = []
-    userinput = ""
-    while userinput != "N":
-        cardname = input("Card name: ")
-        cardamount = input("amount: ")
+    combo_name = []
+    user_input = ""
+    while user_input != "N":
+        card_name = input("Card name: ")
+        card_amount = input("amount: ")
 
-        comboname.append(cardname)
-        combo.append(int(cardamount))
+        combo_name.append(card_name)
+        combo.append(int(card_amount))
 
-        userinput = input("Add another card?(Y/N) ")
+        user_input = input("Add another card?(Y/N) ")
         pass
 
     return combo
