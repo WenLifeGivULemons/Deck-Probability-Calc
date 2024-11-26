@@ -70,6 +70,7 @@ class Deck:
             if ans == 'done':
                 done = True
             else:
+                # TODO: needs to be changed so that it adds the cards in each group rather than each group to the list
                 combo.append(self.group_list[int(ans) - 1])
                 pass
             pass
