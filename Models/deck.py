@@ -4,7 +4,7 @@ from Models import card
 class Deck:
     def __init__(self, deck_size):
         self.size = deck_size
-        self.group_list = []
+        self.combo_list = []
         # create the cards in the deck
         self.card_list = []
         i = 0
@@ -17,8 +17,8 @@ class Deck:
             pass
         pass
 
-    def get_group_list(self):
-        return self.group_list
+    def get_combo_list(self):
+        return self.combo_list
 
     def get_deck_list(self):
         return self.card_list
@@ -29,8 +29,7 @@ class Deck:
             pass
         pass
 
-    # TODO: unused
-    def create_group(self):
+    def create_combo(self):
         group = []
         done = False
         while done is False:
@@ -42,16 +41,15 @@ class Deck:
                 group.append(self.card_list[int(ans)-1])
                 pass
             pass
-        self.group_list.append(group)
+        self.combo_list.append(group)
         pass
 
-    # TODO: unused
     def list_groups(self):
-        for i in range(len(self.group_list)):
+        for i in range(len(self.combo_list)):
             print("Group " + str(i+1))
             list_to_print = ""
-            for j in range(len(self.group_list[i])):
-                list_to_print = list_to_print + self.group_list[i][j]
+            for j in range(len(self.combo_list[i])):
+                list_to_print = list_to_print + self.combo_list[i][j]
                 pass
             print(list_to_print)
             pass

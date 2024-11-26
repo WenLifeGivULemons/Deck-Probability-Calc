@@ -2,24 +2,6 @@ import math
 from Models import deck
 
 
-# unused. to be removed
-def create_hand():
-    combo = []
-    combo_name = []
-    user_input = ""
-    while user_input != "N":
-        card_name = input("Card name: ")
-        card_amount = input("amount: ")
-
-        combo_name.append(card_name)
-        combo.append(int(card_amount))
-
-        user_input = input("Add another card?(Y/N) ")
-        pass
-
-    return combo
-
-
 def prob_of_combo(deck_size, combo, hand_size):
     total_combo = math.comb(deck_size, hand_size)
 
@@ -52,19 +34,37 @@ def run_prob():
     hand_going_first = 5
     hand_going_second = 6
 
-    # 2D array
-    hand = deck.get_group_list()
+    # 2D array list of groups of cards
+    combo = deck.get_combo_list()
 
     prob_first = []
     prob_second = []
-    # 2D arrays need to fix
-    for i in range(0, hand.size):
-        prob_first[i] = prob_of_combo(int(deck.size), hand[i], hand_going_first)
-        prob_second[i] = prob_of_combo(int(deck.size), hand[i], hand_going_second)
 
-    # TODO: return for view
+    '''
+    get prob of each combo 
+    add them together
+    add to main number
+    combine two combos into one hand
+    check if number of unique cards is over hand size
+    get prob of drawing that hand 
+    add them together
+    subtract this number from main number
+    repeat for three combos in one hand but instead add to main number because odd
+    repeat for four combos in one hand but instead subtract from main number because even
+    repeat for five  combos in one hand but instead add to main number because odd
+    repeat for six combos in one hand but instead subtract from main number because even
+    '''
+    # TODO: fix below loop to the above notes
+    # loop through each combo in combo_list
+    for i in range(0, combo.size):
+        prob_first[i] = prob_of_combo(int(deck.size), combo[i], hand_going_first)
+        prob_second[i] = prob_of_combo(int(deck.size), combo[i], hand_going_second)
+
+    # TODO: change to floats
     print("Going first: %.2f Going second: %.2f" % (prob_first, prob_second))
+    # TODO: return for view
     pass
+
 
 
 
