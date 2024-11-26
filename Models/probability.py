@@ -32,6 +32,7 @@ def prob_of_combo(deck_size, combo, hand_size):
         not_card.append(math.comb(deck_size - i, hand_size))
         none_cards = none_cards - i
         pass
+    # composite prob of drawing the combo
     none_cards = math.comb(none_cards, hand_size)
 
     # prob to get at least one of each card needed in combo
@@ -48,21 +49,21 @@ def prob_of_combo(deck_size, combo, hand_size):
 
 
 def run_prob():
-    handgoingfirst = 5
-    handgoingsecond = 6
+    hand_going_first = 5
+    hand_going_second = 6
 
     # 2D array
-    hand = deck.getgrouplist()
+    hand = deck.get_group_list()
 
-    probfirst = []
-    probsecond = []
+    prob_first = []
+    prob_second = []
     # 2D arrays need to fix
     for i in range(0, hand.size):
-        probfirst[i] = prob_of_combo(int(deck.size), hand[i], handgoingfirst)
-        probsecond[i] = prob_of_combo(int(deck.size), hand[i], handgoingsecond)
+        prob_first[i] = prob_of_combo(int(deck.size), hand[i], hand_going_first)
+        prob_second[i] = prob_of_combo(int(deck.size), hand[i], hand_going_second)
 
     # TODO: return for view
-    print("Going first: %.2f Going second: %.2f" % (probfirst, probsecond))
+    print("Going first: %.2f Going second: %.2f" % (prob_first, prob_second))
     pass
 
 
