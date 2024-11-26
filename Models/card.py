@@ -1,13 +1,11 @@
 class Card:
-    def __init__(self, cardname, cardamount):
-        self.name = cardname
-        self.amount = cardamount
+    def __init__(self, card_name, card_amount):
+        self.name = card_name
+        self.amount = card_amount
         pass
 
-
-    def getname(self):
+    def get_name(self):
         return self.name
 
-
-    def getamount(self):
+    def get_amount(self):
         return self.amount

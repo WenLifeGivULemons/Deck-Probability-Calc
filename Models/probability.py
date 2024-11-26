@@ -20,21 +20,31 @@ def create_hand():
     return combo
 
 
-def prob_of_combo(decksize, combo, handsize):
-    totalcomb = math.comb(decksize, handsize)
+def prob_of_combo(deck_size, combo, hand_size):
+    total_combo = math.comb(deck_size, hand_size)
 
-    notcard = []
-    nonecards = decksize
+    # composite prob of drawing each individual card in hand
+    not_card = []
+    # amount of cards that are not a part of the combo
+    none_cards = deck_size
+    # loop through each card in combo
     for i in combo:
-        notcard.append(math.comb(decksize - i, handsize))
-        nonecards = nonecards - i
+        not_card.append(math.comb(deck_size - i, hand_size))
+        none_cards = none_cards - i
         pass
-    nonecards = math.comb(nonecards, handsize)
+    none_cards = math.comb(none_cards, hand_size)
 
-    atleastoneeach = totalcomb - (notcard[0] + notcard[1] - nonecards)
+    # prob to get at least one of each card needed in combo
+    at_least_one_each = total_combo
+    helper = 0
+    for i in combo:
+        helper = helper + i
+        pass
+    helper = helper - none_cards
+    at_least_one_each = at_least_one_each - helper
 
-    comboprob = atleastoneeach / totalcomb
-    return comboprob * 100
+    combo_prob = at_least_one_each / total_combo
+    return combo_prob * 100
 
 
 def run_prob():
@@ -49,8 +59,9 @@ def run_prob():
     # 2D arrays need to fix
     for i in range(0, hand.size):
         probfirst[i] = prob_of_combo(int(deck.size), hand[i], handgoingfirst)
-        probsecond = prob_of_combo(int(deck.size), hand[i], handgoingsecond)
+        probsecond[i] = prob_of_combo(int(deck.size), hand[i], handgoingsecond)
 
+    # TODO: return for view
     print("Going first: %.2f Going second: %.2f" % (probfirst, probsecond))
     pass
 

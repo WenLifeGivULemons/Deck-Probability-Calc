@@ -1,33 +1,31 @@
 import card
 
+
 class Deck:
-    def __init__(self, decksize):
-        self.size = decksize
-        self.grouplist = []
+    def __init__(self, deck_size):
+        self.size = deck_size
+        self.group_list = []
         # create the cards in the deck
-        self.cardlist = []
+        self.card_list = []
         i = 0
         while i < self.size:
-            cardname = input("What is the card name? ")
-            cardamount = int(input("How many copies are there? "))
+            card_name = input("What is the card name? ")
+            card_amount = int(input("How many copies are there? "))
 
-            self.cardlist.append(card.Card(cardname, cardamount))
-            i += cardamount
+            self.card_list.append(card.Card(card_name, card_amount))
+            i += card_amount
             pass
         pass
 
+    def get_group_list(self):
+        return self.group_list
 
-    def getgrouplist(self):
-        return self.grouplist
-    
-
-    def getdecklist(self):
-        return self.cardlist
-
+    def get_deck_list(self):
+        return self.card_list
 
     def print_deck(self):
         for i in range(self.size):
-            print(str(i + 1) + ": " + self.cardlist[i].getname() + ", amt: " + str(self.cardlist[i].getamount()))
+            print(str(i + 1) + ": " + self.card_list[i].get_name() + ", amt: " + str(self.card_list[i].get_amount()))
             pass
         pass
 
@@ -41,20 +39,20 @@ class Deck:
             if ans == 'done':
                 done = True
             else:
-                group.append(self.decklist[int(ans)-1])
+                group.append(self.card_list[int(ans)-1])
                 pass
             pass
-        self.grouplist.append(group)
+        self.group_list.append(group)
         pass
 
     # unused
     def list_groups(self):
-        for i in range(len(self.grouplist)):
+        for i in range(len(self.group_list)):
             print("Group " + str(i+1))
-            list = ""
-            for j in range(len(self.grouplist[i])):
-                list = list + self.grouplist[i][j]
+            list_to_print = ""
+            for j in range(len(self.group_list[i])):
+                list_to_print = list_to_print + self.group_list[i][j]
                 pass
-            print(list)
+            print(list_to_print)
             pass
         pass
