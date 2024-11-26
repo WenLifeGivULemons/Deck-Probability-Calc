@@ -6,6 +6,5 @@ if __name__ == '__main__':
     deck = deck.Deck(int(deck_size))
     deck.print_deck()
     deck.create_group()
-    deck.list_groups()
     prob.run_prob()
     pass

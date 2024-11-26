@@ -35,7 +35,7 @@ def run_prob():
     hand_going_second = 6
 
     # 2D array list of groups of cards
-    combo = deck.get_combo_list()
+    hand = deck.get_group_list()
 
     prob_first = []
     prob_second = []
@@ -56,12 +56,11 @@ def run_prob():
     '''
     # TODO: fix below loop to the above notes
     # loop through each combo in combo_list
-    for i in range(0, combo.size):
-        prob_first[i] = prob_of_combo(int(deck.size), combo[i], hand_going_first)
-        prob_second[i] = prob_of_combo(int(deck.size), combo[i], hand_going_second)
+    for i in range(0, hand.size):
+        prob_first[i] = prob_of_combo(int(deck.size), hand[i], hand_going_first)
+        prob_second[i] = prob_of_combo(int(deck.size), hand[i], hand_going_second)
 
-    # TODO: change to floats
-    print("Going first: %.2f Going second: %.2f" % (prob_first, prob_second))
+    print("Going first: %.2f Going second: %.2f" % (prob_drawing_combo_first, prob_drawing_combo_second))
     # TODO: return for view
     pass
 
