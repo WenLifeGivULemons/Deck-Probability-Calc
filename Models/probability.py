@@ -1,5 +1,5 @@
 import math
-import deck
+from Models import deck
 
 
 # unused. to be removed

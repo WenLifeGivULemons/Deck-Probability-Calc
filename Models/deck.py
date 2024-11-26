@@ -1,4 +1,4 @@
-import card
+from Models import card
 
 
 class Deck:
@@ -29,7 +29,7 @@ class Deck:
             pass
         pass
 
-    # unused
+    # TODO: unused
     def create_group(self):
         group = []
         done = False
@@ -45,7 +45,7 @@ class Deck:
         self.group_list.append(group)
         pass
 
-    # unused
+    # TODO: unused
     def list_groups(self):
         for i in range(len(self.group_list)):
             print("Group " + str(i+1))
