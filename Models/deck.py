@@ -1,10 +1,13 @@
 import card
+import combo
 
 
 class Deck:
     def __init__(self, deck_size):
         self.size = deck_size
+        # a 2D list of groups of cards
         self.group_list = []
+        # a list of combo objects
         self.combo_list = []
         # create the cards in the deck
         self.card_list = []
@@ -62,17 +65,35 @@ class Deck:
         pass
 
     def create_combo(self):
-        combo = []
+        combo_cards = []
+        bricks = []
         done = False
         while done is False:
-            self.list_groups()
-            ans = input("\nGive the number of the group you want to add to the combo, or print 'done': ")
-            if ans == 'done':
+            add_cards = True
+            while add_cards is True:
+                self.list_groups()
+                ans = input("\nGive the number of the group you want to add to the combo, or print 'done': ")
+                if ans == 'done':
+                    add_cards = False
+                else:
+                    combo_cards.append(self.group_list[int(ans) - 1])
+                    pass
+                pass
+            add_bricks = True
+            while add_bricks is True:
+                self.list_groups()
+                ans = input("\nGive the number of the group you want to add as a brick to the combo, or print 'done': ")
+                if ans == 'done':
+                    add_bricks = False
+                else:
+                    bricks.append(self.group_list[int(ans) - 1])
+                    pass
+                pass
+            new_combo = combo.Combo(combo_cards, bricks)
+            self.combo_list.append(new_combo)
+            ans = input("\nWould you like to add a new combo? Y/N")
+            if ans is 'N':
                 done = True
-            else:
-                # TODO: needs to be changed so that it adds the cards in each group rather than each group to the list
-                combo.append(self.group_list[int(ans) - 1])
                 pass
             pass
-        self.combo_list.append(combo)
         pass
