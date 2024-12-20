@@ -36,7 +36,11 @@ class Deck:
     '''
     A group is a group of cards that share a characteristic. One card can be in multiple groups that overlap with each
     other.  For example Mermail Abyssteus can be in a group called starters and a group called Waters and a group called
-    monsters all at the same time.  Groups are used to make combos by pairing each group of cards together  
+    monsters all at the same time.  Groups are used to make combos by pairing each group of cards together so that users
+    can make 1 card, 2 card, 3 card, etc. combos where each group is that one card in the combo can be from any card in
+    that group.  For example.  Mermail Abyssteus and Mermail Abysspike are in a group called starters.  Atlantean
+    Dragoons and Mermail Shadow Squad are in a group called enablers.  A combo that has two groups, starters and 
+    enablers, will be a two card combo that will be at least 1 card from starters and at least 1 card from enablers.
     '''
     def create_group(self):
         group = []
